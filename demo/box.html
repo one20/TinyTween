@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>Box Demo</title>
+	<style>
+		#box1{
+			padding: 40px 0px;
+			width:100px;
+			background: #00FF00;
+			text-align: center;
+			font-family: Helvetica, Arial, "sans serif";
+			font-size: 12px;
+			position: absolute;
+			top: 0px;
+			left: 0px;
+		}
+	</style>
+</head>
+<body>
+	<div id="box1">BOX 1</div>
+	<script src="../src/TinyTween.js"></script>
+	<script type="text/javascript">
+		//Easing function
+	    function cubicInOut(t, b, c, d) {
+	        var ts=(t/=d)*t;
+	        var tc=ts*t;
+	        return b+c*(-2*tc + 3*ts);
+	    }
+
+	    //Set the animation 'frames per second', default is 24
+	    TT.fps = 40; 
+
+	    //Add the '#box1' element to the timeline, with a lifespan from frame 1 to 50
+	    var boxAnimation = TT.create('#box1', 1, 50);
+
+	    //Animate the 'left' css property of box from 0px to 200px between frames 1 to 50
+	    boxAnimation.tween(1,50,{left:0},{left:200},cubicInOut);
+
+	    //Animate the 'opacity' css property of box from 1 to 0 between frames 25 to 50
+	    boxAnimation.tween(25,50,{opacity:1},{opacity:0},cubicInOut);
+
+	    //Play the animation
+	    TT.play();
+	</script>
+</body>
+</html>
