@@ -11,7 +11,7 @@ TinyTween was conceived as an animation tool for creating HTML5 banner ads, focu
 ```
 <script type="text/javascript">
 
-  //Easing function
+  	//Easing function
 	function cubicInOut(t, b, c, d) {
 		var ts=(t/=d)*t;
 		var tc=ts*t;
@@ -21,8 +21,8 @@ TinyTween was conceived as an animation tool for creating HTML5 banner ads, focu
 	//Set the animation 'frames per second', default is 24
 	TT.fps = 40; 
 	
-	//Add the '#box1' element to the timeline, with a lifespan from frame 1 to 200
-	var boxAnimation = TT.create('#box1', 1, 200);
+	//Add the '#box1' element to the timeline, with a lifespan from frame 1 to 50
+	var boxAnimation = TT.create('#box1', 1, 50);
 	
 	//Animate the 'left' css property of box from 0px to 200px between frames 1 to 50
 	boxAnimation.tween(1,50,{left:0},{left:200},cubicInOut);
